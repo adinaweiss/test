@@ -225,3 +225,67 @@ button:hover {
         font-size: 25px;
     }
 }
+
+.content-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns: left and right */
+    grid-template-rows: auto auto; /* Dynamic rows for sections and image */
+    gap: 20px; /* Space between items */
+    padding: 20px;
+}
+
+.left-section {
+    grid-column: 1; /* Spans the first column */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between sections */
+}
+
+.right-section {
+    grid-column: 2; /* Spans the second column */
+    align-self: start; /* Aligns the image to the top of its row */
+}
+
+.right-section img {
+    width: 100%; /* Makes the image responsive */
+    height: auto;
+    border-radius: 10px; /* Optional styling */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.full-width-section {
+    grid-column: 1 / -1; /* Spans both columns */
+    grid-row: 3; /* Places it on the last row */
+    text-align: center;
+    margin-top: 20px;
+}
+
+section h2 {
+    font-size: 1.5rem;
+    color: #005030; /* Match your theme */
+}
+
+button {
+    background-color: #f47321;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #d65e1a; /* Darker orange on hover */
+}
+
+@media (max-width: 768px) {
+    .content-container {
+        grid-template-columns: 1fr; /* Stack items in one column */
+    }
+
+    .right-section img {
+        margin: 0 auto; /* Center image */
+    }
+}
