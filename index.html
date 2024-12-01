@@ -8,19 +8,11 @@
 </head>
 <body>
     <header>
-        <h1>Lowe Art Museum Final Touches Image Gallery Test</h1>
+        <h1>Lowe Art Museum Final Touches Image Gallery</h1>
     </header>
 
-    <div id="lightbox" class="hidden">
-        <div class="lightbox-content">
-            <span class="close">&times;</span>
-            <img id="lightbox-img" src="" alt="Expanded View">
-            <span class="arrow prev">&lt;</span>
-            <span class="arrow next">&gt;</span>
-        </div>
-    </div>    
-
     <div class="content-container">
+        <!-- Left Column -->
         <div class="left-section">
             <section id="submit-section">
                 <h2>Submit Your Images</h2>
@@ -38,11 +30,11 @@
             </section>
         </div>
 
+        <!-- Right Column -->
         <div class="right-section">
-            <img src="images/original painting.png" alt="Original Painting" />
-        </div>
-
-        <div class="full-width-section">
+            <div class="image-container">
+                <img src="images/original painting.png" alt="Original Painting">
+            </div>
             <section id="go-paint">
                 <h2>Finish Your Own Painting</h2>
                 <p>Want to create your own painting?</p>
@@ -55,7 +47,7 @@
 
     <main>
         <section id="gallery">
-            <!-- To add an image, copy and paste a new div with similar structure -->
+            <!-- Gallery images -->
             <div class="gallery-item">
                 <img src="images/approved/sample1.png" alt="Sample Image 1">
             </div>
@@ -67,7 +59,6 @@
             </div>
         </section>
     </main>
-
     <script src="js/scripts.js"></script>
 </body>
 </html>
