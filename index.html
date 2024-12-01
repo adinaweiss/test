@@ -11,8 +11,16 @@
         <h1>Lowe Art Museum Final Touches Image Gallery</h1>
     </header>
 
+    <div id="lightbox" class="hidden">
+        <div class="lightbox-content">
+            <span class="close">&times;</span>
+            <img id="lightbox-img" src="" alt="Expanded View">
+            <span class="arrow prev">&lt;</span>
+            <span class="arrow next">&gt;</span>
+        </div>
+    </div>    
+
     <div class="content-container">
-        <!-- Left Column -->
         <div class="left-section">
             <section id="submit-section">
                 <h2>Submit Your Images</h2>
@@ -26,15 +34,15 @@
                 <h2>How It Works</h2>
                 <p>1. Submit your image using the form above.</p>
                 <p>2. Our team will review your submission for approval.</p>
-                <p>3. Approved images will appear in our public gallery!</p>
+                <p>3. Approved images will appear in the gallery!</p>
             </section>
         </div>
 
-        <!-- Right Column -->
         <div class="right-section">
-            <div class="image-container">
-                <img src="images/original painting.png" alt="Original Painting">
-            </div>
+            <img src="images/original painting.png" alt="Original Painting" />
+        </div>
+
+        <div class="full-width-section">
             <section id="go-paint">
                 <h2>Finish Your Own Painting</h2>
                 <p>Want to create your own painting?</p>
@@ -47,11 +55,15 @@
 
     <main>
         <section id="gallery">
-            <h2>Image Gallery</h2>
-            <div id="gallery-container">
-                <!-- Back/Next Buttons -->
-                <button class="arrow left-arrow" id="prev-btn">&lt;</button>
-                <button class="arrow right-arrow" id="next-btn">&gt;</button>
+            <!-- To add an image, copy and paste a new div with similar structure -->
+            <div class="gallery-item">
+                <img src="images/approved/sample1.png" alt="Sample Image 1">
+            </div>
+            <div class="gallery-item">
+                <img src="images/approved/sample2.png" alt="Sample Image 2">
+            </div>
+            <div class="gallery-item">
+                <img src="images/approved/sample3.png" alt="Sample Image 3">
             </div>
         </section>
     </main>
