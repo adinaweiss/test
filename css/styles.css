@@ -1,0 +1,227 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+header {
+    background-color: #005030;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+/*
+#gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px;
+    justify-content: center;
+}
+*/
+
+#gallery img {
+    /*max-width: 200px;*/
+    border: 2px solid #f47321;
+    border-radius: 5px;
+}
+
+#gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px; /* Space between images */
+    padding: 20px;
+    justify-content: center;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Rounded corners */
+    transition: transform 0.3s ease; /* Hover effect */
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+button {
+    background-color: #f47321;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #d65e1a; /* Darker orange on hover */
+}
+/* Lightbox Styles */
+#lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#lightbox.visible {
+    opacity: 1;
+    visibility: visible;
+}
+/*
+.lightbox-content {
+    position: relative;
+}
+
+.lightbox-content img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 60px; 
+    box-sizing: border-box;
+}
+
+.lightbox-content img {
+    max-width: 80%; 
+    max-height: 90%; 
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+
+.lightbox-content .close {
+    position: absolute;
+    top: 75px;
+    right: 0;
+    font-size: 48px;
+    color: white;
+    cursor: pointer;
+}
+/*
+.lightbox-content .arrow {
+    position: absolute;
+    top: 50%;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    transform: translateY(-50%);
+}
+
+.lightbox-content .arrow.prev {
+    left: -50px;
+}
+
+.lightbox-content .arrow.next {
+    right: -30px;
+}
+*/
+.lightbox-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 60px;
+    box-sizing: border-box;
+}
+
+.lightbox-content img {
+    max-width: 80%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    position: relative; /* Needed for alignment reference */
+}
+
+.lightbox-content .close {
+    position: absolute;
+    top: 0; /* Aligns to the top of the container */
+    right: 0; /* Adjusts to the right side */
+    transform: translate(50%, -50%); /* Slight offset for visual alignment */
+    font-size: 48px;
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    z-index: 3; /* Ensure it’s above the image */
+}
+
+.lightbox-content .arrow {
+    position: absolute;
+    top: 50%;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    transform: translateY(-50%);
+    z-index: 2; /* Ensure arrows are on top */
+}
+
+.lightbox-content .arrow.prev {
+    left: 10px; /* Inside the reserved space */
+}
+
+.lightbox-content .arrow.next {
+    right: 10px; /* Inside the reserved space */
+}
+
+
+/* Larger click/tap area */
+.lightbox-content .arrow::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    bottom: -10px;
+    left: -10px;
+    right: -10px;
+}
+
+@media (max-width: 768px) {
+    .lightbox-content {
+        padding: 0 30px; /* Reserve less space for arrows */
+    }
+
+    .lightbox-content img {
+        max-width: 90%; /* Allow larger image on smaller screens */
+    }
+
+    .lightbox-content .arrow {
+        font-size: 30px; /* Smaller arrows */
+    }
+}
+
+@media (max-width: 480px) {
+    .lightbox-content {
+        padding: 0 20px; /* Minimal space for very small screens */
+    }
+
+    .lightbox-content img {
+        max-width: 95%;
+    }
+
+    .lightbox-content .arrow {
+        font-size: 25px;
+    }
+}
