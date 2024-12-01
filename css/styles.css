@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -12,41 +13,54 @@ header {
     padding: 1rem 0;
 }
 
-/*
-#gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+/* Content Layout */
+.content-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
     padding: 20px;
-    justify-content: center;
-}
-*/
-
-#gallery img {
-    /*max-width: 200px;*/
-    border: 2px solid #f47321;
-    border-radius: 5px;
 }
 
+.left-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.right-section img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.full-width-section {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Gallery Styles */
 #gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px; /* Space between images */
+    gap: 20px;
     padding: 20px;
-    justify-content: center;
 }
 
 .gallery-item img {
     width: 100%;
     height: auto;
-    border-radius: 10px; /* Rounded corners */
-    transition: transform 0.3s ease; /* Hover effect */
+    border-radius: 10px;
+    border: 2px solid #f47321;
+    transition: transform 0.3s ease;
 }
 
 .gallery-item img:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
+    transform: scale(1.05);
 }
 
+/* Button Styles */
 button {
     background-color: #f47321;
     color: white;
@@ -59,8 +73,9 @@ button {
 }
 
 button:hover {
-    background-color: #d65e1a; /* Darker orange on hover */
+    background-color: #d65e1a;
 }
+
 /* Lightbox Styles */
 #lightbox {
     position: fixed;
@@ -82,69 +97,10 @@ button:hover {
     opacity: 1;
     visibility: visible;
 }
-/*
-.lightbox-content {
-    position: relative;
-}
-
-.lightbox-content img {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-}
 
 .lightbox-content {
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 60px; 
-    box-sizing: border-box;
-}
-
-.lightbox-content img {
-    max-width: 80%; 
-    max-height: 90%; 
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-}
-
-
-.lightbox-content .close {
-    position: absolute;
-    top: 75px;
-    right: 0;
-    font-size: 48px;
-    color: white;
-    cursor: pointer;
-}
-/*
-.lightbox-content .arrow {
-    position: absolute;
-    top: 50%;
-    font-size: 40px;
-    color: white;
-    cursor: pointer;
-    user-select: none;
-    transform: translateY(-50%);
-}
-
-.lightbox-content .arrow.prev {
-    left: -50px;
-}
-
-.lightbox-content .arrow.next {
-    right: -30px;
-}
-*/
-.lightbox-content {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 60px;
-    box-sizing: border-box;
+    text-align: center;
 }
 
 .lightbox-content img {
@@ -152,140 +108,39 @@ button:hover {
     max-height: 90%;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    position: relative; /* Needed for alignment reference */
 }
 
 .lightbox-content .close {
     position: absolute;
-    top: 0; /* Aligns to the top of the container */
-    right: 0; /* Adjusts to the right side */
-    transform: translate(50%, -50%); /* Slight offset for visual alignment */
-    font-size: 48px;
+    top: 10px;
+    right: 10px;
+    font-size: 2rem;
     color: white;
     cursor: pointer;
-    padding: 5px;
-    border-radius: 50%;
-    z-index: 3; /* Ensure it’s above the image */
+    z-index: 1;
 }
 
 .lightbox-content .arrow {
     position: absolute;
     top: 50%;
-    font-size: 40px;
+    font-size: 2rem;
     color: white;
     cursor: pointer;
-    user-select: none;
     transform: translateY(-50%);
-    z-index: 2; /* Ensure arrows are on top */
+    user-select: none;
 }
 
 .lightbox-content .arrow.prev {
-    left: 10px; /* Inside the reserved space */
+    left: 10px;
 }
 
 .lightbox-content .arrow.next {
-    right: 10px; /* Inside the reserved space */
+    right: 10px;
 }
 
-
-/* Larger click/tap area */
-.lightbox-content .arrow::before {
-    content: "";
-    position: absolute;
-    top: -10px;
-    bottom: -10px;
-    left: -10px;
-    right: -10px;
-}
-
-@media (max-width: 768px) {
-    .lightbox-content {
-        padding: 0 30px; /* Reserve less space for arrows */
-    }
-
-    .lightbox-content img {
-        max-width: 90%; /* Allow larger image on smaller screens */
-    }
-
-    .lightbox-content .arrow {
-        font-size: 30px; /* Smaller arrows */
-    }
-}
-
-@media (max-width: 480px) {
-    .lightbox-content {
-        padding: 0 20px; /* Minimal space for very small screens */
-    }
-
-    .lightbox-content img {
-        max-width: 95%;
-    }
-
-    .lightbox-content .arrow {
-        font-size: 25px;
-    }
-}
-
-.content-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two columns: left and right */
-    grid-template-rows: auto auto; /* Dynamic rows for sections and image */
-    gap: 20px; /* Space between items */
-    padding: 20px;
-}
-
-.left-section {
-    grid-column: 1; /* Spans the first column */
-    display: flex;
-    flex-direction: column;
-    gap: 20px; /* Space between sections */
-}
-
-.right-section {
-    grid-column: 2; /* Spans the second column */
-    align-self: start; /* Aligns the image to the top of its row */
-}
-
-.right-section img {
-    width: 100%; /* Makes the image responsive */
-    height: auto;
-    border-radius: 10px; /* Optional styling */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.full-width-section {
-    grid-column: 1 / -1; /* Spans both columns */
-    grid-row: 3; /* Places it on the last row */
-    text-align: center;
-    margin-top: 20px;
-}
-
-section h2 {
-    font-size: 1.5rem;
-    color: #005030; /* Match your theme */
-}
-
-button {
-    background-color: #f47321;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #d65e1a; /* Darker orange on hover */
-}
-
+/* Responsive Design */
 @media (max-width: 768px) {
     .content-container {
-        grid-template-columns: 1fr; /* Stack items in one column */
-    }
-
-    .right-section img {
-        margin: 0 auto; /* Center image */
+        grid-template-columns: 1fr;
     }
 }
