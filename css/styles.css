@@ -46,6 +46,15 @@ h2 {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+#go-paint {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
 /* Gallery Styles */
 #gallery {
     display: grid;
@@ -150,8 +159,3 @@ button:hover {
         grid-template-columns: 1fr;
     }
 }
-
-
-
-
-
