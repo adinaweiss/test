@@ -13,6 +13,11 @@ header {
     padding: 1rem 0;
 }
 
+h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
 h2 {
     color: #005030;
     font-size: 1.5rem;
@@ -31,13 +36,13 @@ button {
 }
 
 button:hover {
-    background-color: #d65e1a; /* Darker orange on hover */
+    background-color: #d65e1a;
 }
 
 /* Layout Styles */
 .content-container {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Two equal-width columns */
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
     padding: 20px;
 }
@@ -58,42 +63,48 @@ button:hover {
 
 /* Image Container */
 .image-container img {
-    max-width: 80%; /* Adjust image size */
+    max-width: 80%;
     height: auto;
     display: block;
-    margin: 0 auto; /* Center image horizontally */
+    margin: 0 auto;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Gallery */
 #gallery {
+    margin: 20px;
+    text-align: center;
+}
+
+#gallery-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
-    padding: 20px;
     justify-content: center;
+    padding: 20px;
 }
 
-.gallery-item img {
+#gallery-container img {
     width: 100%;
     height: auto;
     border-radius: 10px;
-    transition: transform 0.3s ease; /* Hover effect */
+    transition: transform 0.3s ease;
 }
 
-.gallery-item img:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
+#gallery-container img:hover {
+    transform: scale(1.05);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .content-container {
-        grid-template-columns: 1fr; /* Single column on smaller screens */
+        grid-template-columns: 1fr;
     }
 
     .image-container img {
-        max-width: 100%; /* Full width on smaller screens */
+        max-width: 100%;
     }
 }
+
 
