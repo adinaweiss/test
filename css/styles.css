@@ -13,6 +13,10 @@ header {
     padding: 1rem 0;
 }
 
+h2 {
+    color: #005030;
+}
+
 /* Content Layout */
 .content-container {
     display: grid;
@@ -27,17 +31,19 @@ header {
     gap: 20px;
 }
 
+.right-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
 .right-section img {
     width: 100%;
+    max-width: 400px;
     height: auto;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.full-width-section {
-    grid-column: 1 / -1;
-    text-align: center;
-    margin-top: 20px;
 }
 
 /* Gallery Styles */
@@ -144,6 +150,7 @@ button:hover {
         grid-template-columns: 1fr;
     }
 }
+
 
 
 
