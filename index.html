@@ -11,20 +11,17 @@
         <h1>Lowe Art Museum Final Touches Image Gallery</h1>
     </header>
 
-    <!-- Lightbox -->
     <div id="lightbox" class="hidden">
         <div class="lightbox-content">
             <span class="close">&times;</span>
             <img id="lightbox-img" src="" alt="Expanded View">
-            <figcaption id="lightbox-caption"></figcaption>
+            <div id="lightbox-caption"></div>
             <span class="arrow prev">&lt;</span>
             <span class="arrow next">&gt;</span>
         </div>
     </div>    
 
-    <!-- Content Sections -->
     <div class="content-container">
-        <!-- Left Section -->
         <div class="left-section">
             <section id="info-section">
                 <h2>How It Works</h2>
@@ -37,37 +34,37 @@
                 <h2>Submit Your Artwork</h2>
                 <p>Have an image to share? Submit it for review using the form below!</p>
                 <a href="https://forms.gle/eMvc2RLyX2drYiLi7" target="_blank">
-                    <button>Submit Artwork</button>
+                    <button>Submit Image</button>
                 </a>
             </section>
         </div>
 
-        <!-- Right Section -->
         <div class="right-section">
             <figure>
                 <img src="images/original painting.jpg" alt="Original Painting" />
                 <figcaption>Jason Returning to Demand His Father's Kingdom</figcaption>
             </figure>
-            <h2>Finish Your Own Painting</h2>
-            <p>Want to create your own painting?</p>
-            <a href="https://simmer.io/@artlolo/test" target="_blank">
-                <button>Go Paint!</button>
-            </a>
+            <section id="paint-section">
+                <h2>Finish Your Own Painting</h2>
+                <p>Want to create your own painting?</p>
+                <a href="https://simmer.io/@artlolo/test" target="_blank">
+                    <button>Go Paint</button>
+                </a>
+            </section>
         </div>
     </div>
 
-    <!-- Gallery -->
     <main>
         <section id="gallery">
-            <div class="gallery-item" data-caption="Sample Image 1 Description">
+            <div class="gallery-item">
                 <img src="images/approved/sample1.png" alt="Sample Image 1">
                 <div class="gallery-caption">sample1.png</div>
             </div>
-            <div class="gallery-item" data-caption="Sample Image 2 Description">
+            <div class="gallery-item">
                 <img src="images/approved/sample2.png" alt="Sample Image 2">
                 <div class="gallery-caption">sample2.png</div>
             </div>
-            <div class="gallery-item" data-caption="Sample Image 3 Description">
+            <div class="gallery-item">
                 <img src="images/approved/sample3.png" alt="Sample Image 3">
                 <div class="gallery-caption">sample3.png</div>
             </div>
@@ -77,5 +74,6 @@
     <script src="js/scripts.js"></script>
 </body>
 </html>
+
 
 
