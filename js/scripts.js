@@ -5,11 +5,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevArrow = document.querySelector('.arrow.prev');
     const nextArrow = document.querySelector('.arrow.next');
     const images = Array.from(document.querySelectorAll('#gallery img'));
+    const captions = Array.from(document.querySelectorAll('.gallery-caption'));
     let currentIndex = -1;
+
+    // Create and append a caption element for the lightbox
+    const lightboxCaption = document.createElement('div');
+    lightboxCaption.id = 'lightbox-caption';
+    lightboxCaption.style.color = 'white';
+    lightboxCaption.style.marginTop = '10px';
+    lightboxCaption.style.fontSize = '16px';
+    lightbox.appendChild(lightboxCaption);
 
     function showLightbox(index) {
         currentIndex = index;
         lightboxImg.src = images[currentIndex].src;
+        lightboxCaption.textContent = captions[currentIndex].textContent || '';
         lightbox.classList.add('visible');
     }
 
@@ -20,11 +30,13 @@ document.addEventListener('DOMContentLoaded', () => {
     function prevImage() {
         currentIndex = (currentIndex - 1 + images.length) % images.length;
         lightboxImg.src = images[currentIndex].src;
+        lightboxCaption.textContent = captions[currentIndex].textContent || '';
     }
 
     function nextImage() {
         currentIndex = (currentIndex + 1) % images.length;
         lightboxImg.src = images[currentIndex].src;
+        lightboxCaption.textContent = captions[currentIndex].textContent || '';
     }
 
     images.forEach((img, index) => {
