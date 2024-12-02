@@ -26,20 +26,20 @@ h2 {
     align-items: start; /* Aligns both columns at the top */
 }
 
-.left-section,
-.right-section {
+.left-section {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.right-section figure {
+.right-section {
+    grid-column: 2 / 3; /* Spans the entire second column */
     text-align: center;
 }
 
 .right-section img {
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
     height: auto;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -166,6 +166,10 @@ button:hover {
 @media (max-width: 768px) {
     .content-container {
         grid-template-columns: 1fr;
+    }
+
+    .right-section img {
+        max-width: 100%;
     }
 }
 
